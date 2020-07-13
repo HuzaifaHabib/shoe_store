@@ -1,0 +1,32 @@
+{
+    "product" : [
+        {
+            "productID" : 0,
+            "productName": "SHOE MOC CM-8279 BLACK",
+            "productImage":"https://cdn-images-fishry.azureedge.net/product/CM-8279-Black--1--2536e70-urban-sole.jpg",
+            "price": 8495
+            
+        },
+        {
+            "productID" : 1,
+            "productName": "SANDAL HZ-8103-FAWN",
+            "productImage":"https://cdn-images-fishry.azureedge.net/product/1521272582694-product.jpeg",
+            "price": 2795
+            
+        },
+        {
+            "productID" : 2,
+            "productName": "MEN SPORTS SHOES EX-9201-BLUE",
+            "productImage":"https://cdn-images-fishry.azureedge.net/product/1550568912877-product.jpeg",
+            "price":4399
+            
+        },
+        {
+            "productID" : 3,
+            "productName": "BOOT TR-8155- GREY",
+            "productImage":"https://cdn-images-fishry.azureedge.net/product/BOOT-TR-8155--GREY-1032202-urban-sole.jpg",
+            "price": 4199
+            
+        }
+    ]
+}
