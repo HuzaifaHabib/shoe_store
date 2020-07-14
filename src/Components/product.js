@@ -28,9 +28,10 @@ export default function ProductCard({product}) {
           title={product.productName}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          {/* <Typography gutterBottom variant="h5" component="h3">
             {product.productName}
-          </Typography>
+          </Typography> */}
+          <h3>{product.productName}</h3>
         </CardContent>
       </CardActionArea>
       <CardActions>

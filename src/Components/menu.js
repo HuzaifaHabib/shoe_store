@@ -14,17 +14,16 @@ function Menu() {
     return (
 
         <div>
-            <h1>Welcome To Menu</h1>
-
-            {test2[0].map((data) => {
-                return (
-                    <Grid container spacing={3}>>
-                        <Grid item xs={12} md={4}>
+            <Grid container spacing={3} >
+                {test2[0].map((data, ind) => {
+                    return (
+                        <Grid item md={3} key={ind} >
                             <ProductCard product={data} />
                         </Grid>
-                    </Grid>
-                )
-            })}
+                    )
+
+                })}
+            </Grid>
 
         </div>
 
