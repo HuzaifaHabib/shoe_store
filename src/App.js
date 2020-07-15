@@ -3,12 +3,15 @@ import './App.css';
 import RouterConfig from './route';
 import MiniDrawer from './Components/drawer';
 import NavBar from './Components/appbar';
+import {CartContextProvider} from './cartContext'
 
 function App() {
   return (
     <div className="App">
       {/* <NavBar /> */}
-     <RouterConfig />
+      <CartContextProvider>
+        <RouterConfig />
+      </CartContextProvider>
     </div>
   );
 }
