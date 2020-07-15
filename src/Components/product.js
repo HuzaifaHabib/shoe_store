@@ -17,7 +17,9 @@ const useStyles = makeStyles({
 export default function ProductCard({product}) {
   const classes = useStyles();
 
-  let { transactions, addTransaction, deleteTransaction } = useContext(CartContext);
+  // let { transactions, addTransaction, deleteTransaction } = useContext(CartContext);
+  let { addTransaction } = useContext(CartContext);
+
 
   const addToCart = (product)=>{
     addTransaction({
