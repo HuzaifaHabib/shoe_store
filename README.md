@@ -1,4 +1,4 @@
-# Covid-19 Dashboard
+# Shoe Store App
 
 **React Shoe Store App using , Material UI , React Router, React Hooks and Context API**
 - CI/CD with github actions , Deployed on Surge 
