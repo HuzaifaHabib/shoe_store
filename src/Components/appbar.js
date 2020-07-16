@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 import NavLink from './navlinks'
+import { Link } from 'react-router-dom'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { CartContext } from '../cartContext';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,6 +69,8 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
+  let { transactions} = useContext(CartContext);
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -83,19 +87,13 @@ export default function NavBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Shoe Store
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
+          <div>
+            <ul className="NavUl">
+              <li className="Navli"><Link style={{ textDecoration: 'none', color: "white" }} to="/cart">Checkout</Link></li>
+            </ul>
           </div>
+          <ShoppingCartIcon/>
+          <h2>{transactions.length}</h2>  
         </Toolbar>
       </AppBar>
     </div>

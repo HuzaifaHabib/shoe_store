@@ -8,12 +8,13 @@ export const CartContextProvider = ({ children }) => {
     let [state, dispatch] = useReducer(TransactionReducer,InitialState)
 
     function addTransaction(transObj) {
+        console.log(transObj);
         dispatch({
             type: "ADD TRANSACTION",
             payload: {
                 amount: transObj.amount,
                 // description: transObj.desc,
-                // id: transObj.id
+                id: transObj.id
             }
         })
     }
@@ -22,7 +23,7 @@ export const CartContextProvider = ({ children }) => {
         dispatch({
             type: "DELETE TRANSACTION",
             payload: {
-                id: transObj.index
+                id: transObj.id
             }
         })
     }

@@ -14,7 +14,7 @@ function Menu() {
 
     return (
 
-        <div>
+        <div className="container">
             <Grid container spacing={3} >
                 {test2[0].map((data, ind) => {
                     return (

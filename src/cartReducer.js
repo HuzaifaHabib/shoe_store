@@ -5,6 +5,7 @@ const TransactionReducer = ((state, action)=>{
             return [action.payload, ...state]
         }
         case "DELETE TRANSACTION" : {
+            console.log(action.payload)
             const newState = state.filter((trans) => trans.id !== action.payload.id)
             console.log("This is Old state ")
             console.log(state)

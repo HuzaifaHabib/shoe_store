@@ -8,11 +8,7 @@ export const Cart = () => {
 
     // const[cart , setCart] = useContext(CartContext);
     // let { transactions, addTransaction, deleteTransaction } = useContext(CartContext);
-    let { transactions} = useContext(CartContext);
-
-
-
-    console.log(transactions);
+    let { transactions, deleteTransaction} = useContext(CartContext);
 
     const total = () => {
         var totalamount = 0;
@@ -23,8 +19,13 @@ export const Cart = () => {
         return totalamount;
     }
 
+    const handleDelete = (ind)=> {
+        deleteTransaction({id:ind+1})
+        console.log(ind)
+    }
+
     const cartDetail = transactions.map((item, ind) => {
-        return <li>Product {ind + 1} Price : {item.amount} </li>
+        return <li>Product {ind + 1} Price : {item.amount} <button onClick={()=>{handleDelete(ind)}}>Remove</button></li>
     })
 
     return (
