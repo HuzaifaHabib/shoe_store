@@ -6,7 +6,9 @@ const TransactionReducer = ((state, action)=>{
         }
         case "DELETE TRANSACTION" : {
             console.log(action.payload)
-            const newState = state.filter((trans) => trans.id !== action.payload.id)
+            // const newState = state.filter((trans) => trans.id !== action.payload.id)
+            let newState = [...state]
+            newState.splice(action.payload.id,1)
             console.log("This is Old state ")
             console.log(state)
             console.log("This is new state ")

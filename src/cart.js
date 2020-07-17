@@ -20,7 +20,7 @@ export const Cart = () => {
     }
 
     const handleDelete = (ind)=> {
-        deleteTransaction({id:ind+1})
+        deleteTransaction({id:ind})
         console.log(ind)
     }
 
