@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { CartContext } from './cartContext';
+import Grid from '@material-ui/core/Grid';
+
+
 
 
 
@@ -26,34 +29,58 @@ export const Cart = () => {
 
 
     const RenderCartDetail = () => {
+        return (
+            transactions.map((item, ind) => {
+                return <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li>
+            })
+        )
+    }
 
-        const cartDetail = transactions.map((item, ind) => {
-            return <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li>
-        })
+    if (transactions.length === 0) {
+        return (
+            <div className="container">
+                <Grid container
+                    spacing={0}
+                    align="center"
+                    justify="center"
+                    direction="column" >
+                    <Grid item md={12}  >
+                        <img src={process.env.PUBLIC_URL + 'cart-empty.jpg'} alt='cart-empty.jpgs' />
+                    </Grid>
+                </Grid>
+            </div>
+        )
 
-        if (transactions.length === 0) {
-            return <h6>Your Cart is Empty</h6>
-        }
-        else {
-            return cartDetail;
-        }
+    }
+    else {
+        return (
+            <div>
+                <Grid container
+                    spacing={0}
+                    align="center"
+                    justify="center"
+                    direction="column" >
+                    <span>Item in cart : {transactions.length}</span>
+                    <br />
+                    <span>Total price: {total()}</span>
+                    <div>
 
+                        <Grid item md={12}  >
+                            <h3>Cart Item Details</h3>
+                        </Grid>
+                        <Grid item md={12}  >
+                            <ul>
+                                <RenderCartDetail />
+                            </ul>
+                        </Grid>
+                    </div>
+                </Grid>
+            </div>
+        )
     }
 
 
-    return (
-        <div>
-            <span>Item in cart : {transactions.length}</span>
-            <br />
-            <span>Total price: {total()}</span>
-            <div>
-                <h3>Cart Item Details</h3>
-                <ul>
-                    <RenderCartDetail />
-                </ul>
-            </div>
-        </div>
-    )
+
 }
 
 export default Cart;

@@ -84,9 +84,8 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <NavLink />
-          <Typography className={classes.title} variant="h6" noWrap>
-            Shoe Store
-          </Typography>
+         <Typography className={classes.title} variant="h6" noWrap>
+        </Typography>
           <div>
             <ul className="NavUl">
               <li className="Navli"><Link style={{ textDecoration: 'none', color: "white" }} to="/cart">Checkout</Link></li>

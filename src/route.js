@@ -11,7 +11,7 @@ function RouterConfig ( ) {
 
     return(
         <div>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <NavBar />
                 <Switch>
                     <Route exact path='/' component={Home} />
