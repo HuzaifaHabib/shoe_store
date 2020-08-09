@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from './cartContext';
 import Grid from '@material-ui/core/Grid';
+import Chip from '@material-ui/core/Chip';
 
 
 
@@ -31,7 +32,12 @@ export const Cart = () => {
     const RenderCartDetail = () => {
         return (
             transactions.map((item, ind) => {
-                return <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li>
+                return( 
+                    <div>
+                <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li>
+                <Chip label={"Product " + ind + 1 + " Price : " + item.amount} onDelete={() => { handleDelete(ind) }} color="primary" />
+                </div>
+                )
             })
         )
     }
