@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip';
 
 
+import './cart.css'
+
 
 
 
@@ -32,11 +34,14 @@ export const Cart = () => {
     const RenderCartDetail = () => {
         return (
             transactions.map((item, ind) => {
-                return( 
-                    <div>
-                <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li>
-                <Chip label={"Product " + ind + 1 + " Price : " + item.amount} onDelete={() => { handleDelete(ind) }} color="primary" />
-                </div>
+                let num = ind+1;
+                return (
+                    <div class='cart-item-chip-div'>
+                        {/* <li>Product {ind + 1} Price : {item.amount} <button onClick={() => { handleDelete(ind) }}>Remove</button></li> */}
+
+                        <Chip className='cart-item-chip' label={<h2>Product  {num} Price : {item.amount}</h2>} onDelete={() => { handleDelete(ind) }} color="primary" />
+
+                    </div>
                 )
             })
         )
@@ -51,7 +56,7 @@ export const Cart = () => {
                     justify="center"
                     direction="column" >
                     <Grid item md={12}  >
-                        <img src={process.env.PUBLIC_URL + 'cart-empty.jpg'} alt='cart-empty.jpgs' />
+                        <img className='cart-empty-img' src={process.env.PUBLIC_URL + 'cart-empty.jpg'} alt='cart-empty.jpgs' />
                     </Grid>
                 </Grid>
             </div>
@@ -75,9 +80,9 @@ export const Cart = () => {
                             <h3>Cart Item Details</h3>
                         </Grid>
                         <Grid item md={12}  >
-                            <ul>
-                                <RenderCartDetail />
-                            </ul>
+                            {/* <ul> */}
+                            <RenderCartDetail />
+                            {/* </ul> */}
                         </Grid>
                     </div>
                 </Grid>
