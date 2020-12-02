@@ -1,0 +1,22 @@
+.home-shoe1{
+    height:500px;
+    width: 500px;
+}
+
+
+@media(max-width: 865px) {
+    .home-shoe1{
+        height:250px;
+        width: 250px;
+    }
+
+    .style1 {
+        padding-top: 2rem;
+        padding-left: 0.5rem;
+        text-align: center;
+    }
+
+    .commonComp-btn{
+        margin-left: 2.5rem;
+    }
+}

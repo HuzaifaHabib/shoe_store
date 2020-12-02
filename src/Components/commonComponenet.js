@@ -1,14 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import useWebAnimations from "@wellyshen/use-web-animations";
+
+
+import './commonComponent.css';
 
 
 
 
 function CommonComp() {
 
+    const { ref } = useWebAnimations({
+        keyframes: {
+          transform: ["translateY(20px)"], // Move by 500px
+        //   background: ["red", "blue", "green",'orange'], // Go through three colors
+        },
+        timing: {
+          delay: 500, // Start with a 500ms delay
+          duration: 1000, // Run for 1000ms
+          iterations: Infinity, // Repeat once
+          direction: "alternate", // Run the animation forwards and then backwards
+          easing: "ease-in-out", // Use a fancy timing function
+        },
+        // onReady: ({ playState, animate, animation }) => {
+        //   // Triggered when the animation is ready to play (Google Chrome: available in v84+)
+        // },
+        // onUpdate: ({ playState, animate, animation }) => {
+        //   // Triggered when the animation enters the running state or changes state
+        // },
+        // onFinish: ({ playState, animate, animation }) => {
+        //   // Triggered when the animation enters the finished state (Google Chrome: available in v84+)
+        // },
+        // More useful options...
+      });
 
+//     const { ref, animate } = useWebAnimations();
+
+//   useEffect(() => {
+//     document.addEventListener("mousemove", (e) => {
+//       // The target will follow the mouse cursor
+//       animate({
+//         keyframes: { transform: `translate(${e.clientX}px, ${e.clientY}px)` },
+//         timing: { duration: 500, fill: "forwards" },
+//       });
+//     });
+//   }, [animate]);
+    
     return (
         <div>
             <Grid container
@@ -16,28 +54,23 @@ function CommonComp() {
                 align="center"
                 justify="center"
                 direction="row" >
-                {/* <Box display="flex" flexDirection="row"  > */}
                 <Grid item xs >
-                    <div className="style1">
-                        <h1>Welcome To Shoe Store</h1>
+                    <div className="style1" >
+                        <div className="check">
+
+                        <h1 >Welcome To Shoe Store</h1>
                         <p>Exclusive Collection for All type of foot wears</p>
+                        </div>
                         <ul class="commonComp-btn">
-                        <a style={{ textDecoration: 'none' }} href="#"><li className='comComp-li'>Menu</li></a>
-                        <a style={{ textDecoration: 'none' }} href="#"><li className='comComp-li comComp-li-2'>About US</li></a>
+                        <Link style={{ textDecoration: 'none' }} href="#" to='/menu'><li className='comComp-li'>Menu</li></Link>
+                        <Link style={{ textDecoration: 'none' }} href="#" to='aboutus'><li className='comComp-li comComp-li-2'>About US</li></Link>
                         </ul>
                     </div>
                 </Grid>
                 <Grid item xs>
-                    <img height='500px' width='500px' src={process.env.PUBLIC_URL + 'shoe1.png'}></img>
+                    <img ref={ref} class='home-shoe1' src={process.env.PUBLIC_URL + 'shoe1.png'} alt='shoe1.png'></img>
                 </Grid>
-                {/* </Box> */}
-                {/* <Grid item md={12}  >
-                    <h1>Welcome To Shoe Store</h1>
-                </Grid>
-                <Grid item md={12}   >
-                    <h2>Go to <Link style={{ textDecoration: 'none', color: "blue" }} to="/menu">Menu</Link> for list of Products</h2>
-                </Grid> */}
-            </Grid>
+             </Grid>
         </div>
     )
 }

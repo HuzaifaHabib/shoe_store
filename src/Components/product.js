@@ -14,6 +14,7 @@ import { useSpring, animated } from "react-spring"
 
 
 
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -82,7 +83,6 @@ export default function ProductCard({ product }) {
     setOpen(false);
   };
 
-  // let { transactions, addTransaction, deleteTransaction } = useContext(CartContext);
   let { addTransaction } = useContext(CartContext);
 
 
@@ -94,8 +94,9 @@ export default function ProductCard({ product }) {
     console.log(product.price)
   }
 
+
   return (
-    <React.Fragment>
+    <div >
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -162,6 +163,6 @@ export default function ProductCard({ product }) {
         </div>
       </Fade>
     </Modal>
-    </React.Fragment>
+    </div>
   );
 }

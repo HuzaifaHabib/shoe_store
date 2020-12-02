@@ -4,12 +4,11 @@ import data from './../data.json';
 import Grid from '@material-ui/core/Grid';
 
 
-
 function Menu() {
-    // console.log(data.product[0])
-    // const test = data.product[0]
+
     const test2 = Object.values(data)
-    // console.log(test2)
+
+    
 
 
     return (

@@ -14,11 +14,12 @@ function RouterConfig ( ) {
             <Router basename={process.env.PUBLIC_URL}>
                 <NavBar />
                 <Switch>
+                    <div className='container'>
                     <Route exact path='/' component={Home} />
                     <Route path='/aboutus' component={About} />
                     <Route path='/menu' component={Menu} />
                     <Route path='/cart' component={Cart} />
-
+                    </div>
                 </Switch>
 
             </Router>
